@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPS Chart</title>
+    <script src="app.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"></link>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="dpsstyles.css"></link>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="padding-top: 3rem;">
+        <div class="container-fluid">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="Individualized-Pathway.html">
+                        <img class="link-icon" src="/src/Individualized Pathway-Icon.svg" height="40px" width="40px"></img>
+                        <p class="nav-text">Individualized Pathway</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Role-Types.html">
+                        <img class="link-icon" src="/src/Role Type-Icon.svg" height="40px" width="40px"></img>
+                        <p class="nav-text">Role Types</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Area-of-Focus.html">
+                        <img class="link-icon" src="/src/Areas of Focus-Icon.svg" height="40px" width="40px"></img>
+                        <p class="nav-text">Area of Focus</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <h1>Area of Focus</h1>
+    </div>
+    </br>
+    <div class="d-flex justify-content-center" id="DOM">
+        <div class="mySVG" id="SVGGraphic"></div>
+        <div class="textbox">
+            <span id="close" onclick="this.parentNode.remove(); return false;" class="btn btn-default large">
+                <img src="/src/Esc X.svg" height="33" width="33"></img>
+            </span>
+            <div class="card-body" id="card-div">
+                <img src="https://images.saymedia-content.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTczOTM5NzMzODQyMzcxNjQ4/guts-a-berserk-character-analysis.jpg" alt="A cool guy" class="center-img"></img>
+                <br><h2>Guts Highaland</h2>
+                <h3>Black Swordsman</h3>
+                <div class="container">
+                    <div class="row">
+                        <div>
+                            <button class="btn btn-primary" role="button">Profile</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" role="button">Pathway</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

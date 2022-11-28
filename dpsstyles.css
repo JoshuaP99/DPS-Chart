@@ -1,0 +1,169 @@
+@font-face {
+    font-family: BelyDisplay;
+    src: url(/src/BelyDisplay-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(/src/Montserrat-Regular.ttf);
+}
+
+h1 {
+    font-family: BelyDisplay;
+    font-size: 3rem;
+    text-align: left;
+    font: normal normal normal 47px/57px Bely Display;
+    letter-spacing: 0px;
+    color: #483735;
+    opacity: 1;
+    padding: 2rem;
+}
+
+h2 {
+    font-family: BelyDisplay;
+    display: flexbox;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    align-items: center;
+    text-align: left;
+    font: normal normal normal 54px/65px Bely Display;
+    letter-spacing: 0px;
+    color: #483735;
+    opacity: 1;
+}
+
+h3 {
+    font-family: BelyDisplay;
+    display: flexbox;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    align-items: center;
+    text-align: left;
+    font: normal normal bold 25px/55px Montserrat;
+    letter-spacing: 0px;
+    color: #F0532D;
+    opacity: 1; 
+}
+
+.card-body{
+    font-family: Montserrat-Regular;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    font: normal normal normal 25px/30px Montserrat;
+    letter-spacing: 0px;
+    color: #483735;
+    opacity: 1;
+}
+
+.nav-text{
+    font: normal normal bold 15px/35px Montserrat;
+    letter-spacing: 0px;
+    color: #888888;
+    opacity: 1;
+    padding: 1rem;
+}
+
+a{
+    font-family: Montserrat-Regular;
+    font-size: 1.5rem;
+    padding: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    width: 200vh;
+    height: 5rem;
+}
+
+.nav-link{
+    display: flex; 
+    align-items: center;  
+    height: 5rem; 
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.nav-link:hover svg{
+    filter: invert(100%) brightness(118%) contrast(119%);
+}
+
+.nav-text:hover{
+    color: rgba(43, 43, 43, 0.274);
+}
+
+.nav-text{
+    font: normal normal bold 15px/35px Montserrat;
+    letter-spacing: 0px;
+    color: #888888;
+    opacity: 1;
+    padding-top: 2rem;
+    margin-right: 1rem;
+}
+
+.center-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border-radius: 20px;
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-primary{
+    font-family: Montserrat-Regular;
+    text-align: center;
+    font: normal normal bold 20px/24px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    background: #483735 0% 0% no-repeat padding-box;
+    border-radius: 51px;
+    opacity: 1;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-primary:hover{
+    transition: 2ms;
+    background: #291f1e 0% 0% no-repeat padding-box;
+}
+
+.btn-default{
+    padding: 1.2rem;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.collapse-btn{
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2 rem;
+}
+
+.textbox{
+    background-color: #fff;
+    width: 40rem; 
+    margin-right: 5rem;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 52px;
+    opacity: 1;
+}
+
+.link-icon:hover{
+    filter: invert(20%) brightness(90%) contrast(100%);
+}
+
+.mySVG{
+    margin-right: 8rem; 
+    margin-left: 2rem;
+}
+
+.row{
+    margin-left: 1rem;
+}

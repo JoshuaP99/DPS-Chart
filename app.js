@@ -1,93 +1,57 @@
-    // JSON data
-    var nodeData = {
-        "name": "Growth Paths", 
-        "children": [{
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "Guidance", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        }, {
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "G", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        }, {
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "B", 
-                "children": [{
-                    "name": "Sub", "size": 4
-                }]}]
-        },{
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        },{
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "Guidance", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        },{
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "Guidance", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        },{
-            "name": "Marketing + Communications",
-            "children": [{
-                "name": "Guidance", 
-                "children": [{
-                    "name": "Sub B1", "size": 4
-                }]}]
-        },]
-    };
+$.getJSON("/src/Areas-of-focus.json", function(json){
+    console.log(json);
+});
 
-    // Variables
-    var width = 1000;
-    var height = 1000;
-    var radius = Math.min(width, height) / 2;
-    var color = d3.scaleOrdinal(d3.schemeCategory20b);
+class focusCard {
+    constructor(title, body){
+        this.title = title
+        this.body = body
+    }
+}
 
-    // Create primary <g> element
-    var g = d3.select('svg')
-        .attr('width', width)
-        .attr('height', height)
-        .append('g')
-        .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+$(document).ready(function(){
+    $("#SVGGraphic").load("/src/Wheel-Graphic.svg", function(){
+        $("#SVGGraphic svg").css("height", "1000", "width", "1000px");
 
-    // Data strucure
-    var partition = d3.partition()
-        .size([2 * Math.PI, radius]);
+        console.log("loaded successfully")
+        
+        $("#growth-path").click(function(evt) {
+            switch(evt.target.id){
+                case "Finance_Vision":
+                    console.log("object clicked");
+                    areaOfFocusBody();
+                    break;
+                case "Innovation_Vision":
+                    console.log("object clicked");
+                    areaOfFocusBody();
+                    break;
+                case "Tech_Vision":
+                    console.log("clicked")
+                    areaOfFocusBody();
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+});
 
-    // Find data root
-    var root = d3.hierarchy(nodeData)
-        .sum(function (d) { return d.size});
-
-    // Size arcs
-    partition(root);
-    var arc = d3.arc()
-        .startAngle(function (d) { return d.x0 })
-        .endAngle(function (d) { return d.x1 })
-        .innerRadius(function (d) { return d.y0 })
-        .outerRadius(function (d) { return d.y1 });
-
-    // Put it all together
-    g.selectAll('path')
-        .data(root.descendants())
-        .enter().append('path')
-        .attr("display", function (d) { return d.depth ? null : "none"; })
-        .attr("d", arc)
-        .style('stroke', '#fff')
-        .style("fill", function (d) { return color((d.children ? d : d.parent).data.name); })
-        .text(function (d) { return d.name; }); 
+function areaOfFocusBody() {
+    $("#DOM").append(`
+    <div class="textbox">
+        <span id="close" onclick="this.parentNode.remove(); return false;" class="btn btn-default large">
+            <img src="/src/Esc X.svg" height="33" width="33"></img>
+        </span>
+        <h2>${focusCard.title}</h2>
+        <div class="card-body" id="card-div">
+            <p class="card-body" style="padding: 1rem">${focusCard.body}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center" style="padding-bottom: 1rem;">
+                        <button class="btn btn-primary" role="button">Show Employees in this Section</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`)
+}
