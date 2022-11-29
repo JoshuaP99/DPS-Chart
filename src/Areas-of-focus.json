@@ -1,16 +1,50 @@
-[
-    {
+{
+    "Finance": {
         "title": "Finance",
         "body": "Finance recognizes that we are at our core a business. Though financiers have a good mind for numbers, they know there is no formula for success. Those with this area of focus blend soft and hard skills to provide opportunities for our team and maintain our stability well into the future."
     },
-    {
+    "Innovation": {
         "title": "Innovation",
         "body": ""
     },
-    {
-        "title":"",
-        "body":""
-    },{
-
+    "Tech": {
+        "title":"Technology",
+        "body":"Technology experts point us to the right tools for the job. They enable us to work smarter and better. From the IT professionals forming our technical backbone to the software experts executing our work, they connect technology and people to usher in more secure, innovative, and effective processes."
+    },
+    "DDD": {
+        "title":"...",
+        "body":"We don’t know what we don’t know, but we know enough to make space for things we can’t yet imagine. Opportunities for future expansion are built into our organizational structure, so we can easily grow and adapt in response to the needs of our clients and our people."
+    },
+    "CA": {
+        "title":"Construction Administration",
+        "body":"Construction Administration is about the orchestration of detail. Those in this area of focus nurture our projects post-design and into construction, bringing their expertise in constructability, organization, and quality. Communicative and proactive, they serve as the link between multiple parties and ensure our work is completed with care."
+    },
+    "Quality": {
+        "title":"Quality",
+        "body":"These meticulous individuals sweat the small stuff, knowing that it all adds up to make a big impression. They focus primarily on our system of quality and promote the accuracy, clarity, and constructability of our designs. Our firm’s reputation for excellence relies on their sharp attention to detail."
+    },
+    "Design": {
+        "title":"Design",
+        "body":"Great design comes from a diverse collection of voices + perspectives challenging the norm. Those focused in design ensure that collaboration, engagement and creativity come together to find optimal solutions to our clients’ problems. They improve our design process, assure the right people are at the table and advocate for design excellence at every turn."
+    },
+    "SME": {
+        "title":"Subject Matter Expertise",
+        "body":"These experts bring their deep knowledge and experience in a particular subject area to enhance the firm’s practice. Whether they have a passion for sustainability or expertise within an industry or system, Subject Matter Experts provide both depth and breadth to our knowledge base."
+    },
+    "Clients": {
+        "title":"Clients",
+        "body":"Those with this focus blend empathy with expertise to develop strong client relationships. They strive to forge partnerships, making sure that our existing client relationships are strong and that we are continuously bringing in high-value work. In addition to nurturing what exists, they leverage their connections to manifest new, bold ideas."
+    },
+    "Marketing": {
+        "title":"Marketing and Communications",
+        "body":"Marketers help us tell our story. They support our brand in diverse mediums and help us articulate our expertise across disciplines. They speak to our firm’s values as well as to the needs of our clients and the marketplace at large."
+    },
+    "People": {
+        "title":"Our People",
+        "body":"People are the heart of our operation. Those with this focus make sure the firm’s decisions are centered around nurturing our staff. Encompassing Human Resources, training, mentorship, and more, they expand our resources and ensure these are used effectively. They are instrumental to our long-term success, as they help us to cultivate an attractive work environment and build our collective intelligence."
+    },
+    "Operations": {
+        "title":"Operations",
+        "body":"Those with this expertise are constantly working to improve how we function. They oversee all aspects of our business and manage strategy, scheduling, and more, always seeking to boost efficiency and limit risk and liability. Working behind the scenes to support our mission, they look at the big picture while covering the details."
     }
-]
+}

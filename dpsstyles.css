@@ -37,13 +37,26 @@ h3 {
     display: flexbox;
     margin-left: 3rem;
     margin-right: 3rem;
-    align-items: center;
     text-align: left;
     font: normal normal bold 25px/55px Montserrat;
     letter-spacing: 0px;
     color: #F0532D;
     opacity: 1; 
 }
+
+h4 {
+    font-family: BelyDisplay;
+    display: flexbox;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    align-items: center;
+    text-align: left;
+    letter-spacing: 0px;
+    opacity: 1; 
+    font: normal normal bold 18px/22px Montserrat;
+    color: #483735;
+}
+
 
 .card-body{
     font-family: Montserrat-Regular;
@@ -56,6 +69,32 @@ h3 {
     letter-spacing: 0px;
     color: #483735;
     opacity: 1;
+}
+
+.role-subtitle{
+    font-family: Montserrat-Regular;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    font: normal normal normal 25px/30px Montserrat;
+    letter-spacing: 0px;
+    color: #483735;
+    opacity: 1;
+}
+
+.role-text{
+    font-family: Montserrat-Regular;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: left;
+    letter-spacing: 0px;
+    opacity: 1;
+    font: normal normal normal 18px/22px Montserrat;
+    color: #483735;
 }
 
 .nav-text{

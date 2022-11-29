@@ -1,0 +1,62 @@
+{
+    "Vision-Circle": {
+        "title": "Vision",
+        "subtitle": "Finance recognizes that we are at our core a business. Though financiers have a good mind for numbers, they know there is no formula for success. Those with this area of focus blend soft and hard skills to provide opportunities for our team and maintain our stability well into the future.",
+        "chargesubtitle":"Leadership + Strategic Planning",
+        "chargebody":"We lead decision making. We think ahead, identify opportunities and create alignment to take calculated risks to move the firm forward.",
+        "scopesubtitle":"Firm + Market",
+        "scopebody":"We understand the much larger picture, both in the market and across the firm. We bring that context to focus the firm’s efforts, prioritize our investments and support our teams.",
+        "forecastingsubtitle":"Thinking 5-10 Years Ahead",
+        "forecastingbody":"We constantly look ahead. We forecast and bring predictability to our practice so that we can have confidence in our decisions.",
+        "communicationsubtitle":"Strategic Vision",
+        "communicationbody":"We communicate the market influences around us, where the firm is going and why our work matters."
+    },
+    "Excellence-Circle": {
+        "title": "Excellence",
+        "subtitle": "We bring our expertise to holistically improve our craft. We nourish our teams and provide the necessary support and tools to do our best work. Our knowledge and experience help us to collectively mentor, lead and bring in high quality work.",
+        "chargesubtitle":"Continual Improvement of Systems + Practice",
+        "chargebody":"We know that we must continue to improve and innovate in order to grow. We never default to the way it has always been done. We collectively work to build stability to position the firm for opportunity.",
+        "scopesubtitle":"Studio and/or System",
+        "scopebody":"We bring our expertise to focus on a core piece of DPS practice, whether it be to our studio or to a firmwide system.",
+        "forecastingsubtitle":"Thinking 2-5 Years Ahead",
+        "forecastingbody":"Within the scope of our focus, we are always looking ahead. We seek to understand what the market sector will bring and how it will affect our practice.",
+        "communicationsubtitle":"Studio + System Metrics of Success",
+        "communicationbody":"We communicate to support + create alignment. We understand the health of our Studio (or our system) and we bring that context to decision making."
+    },
+    "Guidance-Circle": {
+        "title": "Guidance",
+        "subtitle": "We focus on managing our projects, guiding our teams and improving the quality of our work. We take a larger view, seek to understand the why and dig into our processes to collectively improve our practice.",
+        "chargesubtitle":"Management + Development",
+        "chargebody":"We bring resources together to solve problems and support out teams.",
+        "scopesubtitle":"Team",
+        "scopebody":"We think beyond the bounds of an individual project. We consider the impact of each of our decisions on our clients, our community and our team.",
+        "forecastingsubtitle":"Thinking 1-2 Years Ahead",
+        "forecastingbody":"We know that decisions we make today go beyond the completion of each project. We understand that every decision we make has the potential to affect the momentum of our team and our workflow.",
+        "communicationsubtitle":"Team Metrics of Success",
+        "communicationbody":"We communicate out our team’s challenges and accomplishments. We bring ideas for improvement and ask for help when it is needed."
+    },
+    "Facilitation-Circle": {
+        "title": "Facilitation",
+        "subtitle": "We work to bring teams together. We help those around us and find new ways to solve problems. We consistently get involved and engage outside of our direct teams to collaborate and innovate.",
+        "chargesubtitle":"Organization",
+        "chargebody":"We work to bring order to our projects, understanding that each piece must fit together to help solve out clients’ problems.",
+        "scopesubtitle":"Project",
+        "scopebody":"Taking a step back to see the project as a whole allows us to understand the impact of the work on our clients and the community.",
+        "forecastingsubtitle":"Thinking 3-12 Months Ahead",
+        "forecastingbody":"Thinking several months ahead means that we can plan proactively and create resiliency for what challenges may arise in our workflow.",
+        "communicationsubtitle":"Project Health + Necessary Resources",
+        "communicationbody":"We communicate out the progress of our projects to assure that we are celebrating our successes, supporting our teams and producing the bests possible results."
+    },
+    "Implementation-Circle": {
+        "title": "Implementation",
+        "subtitle": "Everyone at DPS commits to contributing to the solution. We are responsive, connected and curious. As a result, we constantly learn, change and grow. We work to build trust with each other, our clients and our outside collaborators. We think ahead and most importantly, we move forward together.",
+        "chargesubtitle":"Production",
+        "chargebody":"At the heart of what we do is our work. We make certain that it gets done with excellence. Details matter.",
+        "scopesubtitle":"Task",
+        "scopebody":"Each task is important and part of the larger project.",
+        "forecastingsubtitle":"Thinking 1 Day to 3 Months Ahead",
+        "forecastingbody":"Planning for the days ahead allows us to understand the impact of the work that we do beyond just today.",
+        "communicationsubtitle":"Task Achievement + Challenges",
+        "communicationbody":"We continually communicate out the work that has been completed and any help we need to complete the next task."
+    }
+}

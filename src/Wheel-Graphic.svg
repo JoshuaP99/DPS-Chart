@@ -175,7 +175,7 @@
       #SME_Vision:hover{fill:#D0D0D0;}
       #Clients_Vision:hover{fill:#D0D0D0;}
       #Marketing_Vision:hover{fill:#D0D0D0;}
-      #Our_People_Vision:hover{fill:#D0D0D0;}
+      #People_Vision:hover{fill:#D0D0D0;}
       #Operations_Vision:hover{fill:#D0D0D0;}
       #Facilitation_Circle:hover{fill:#D0D0D0;}
       #Implementation_Circle:hover{fill:#D0D0D0;}
@@ -233,9 +233,9 @@
     <path id="Marketing_Guidance" class="cls-16" d="M445.33,345.33l-75-43c-29.45,50.9-44,102.97-44,166h86c0-46.27,11.38-85.64,33-123Z"/>
   </g>
   <g id="Our_People" data-name="Our People">
-    <path id="Our_People_Vision" data-name="Our People_Vision" class="cls-47" d="M460.33,116.33l-19-33c-68.74,39.77-120.23,91.26-160,160l33,19c35.91-62.06,83.94-110.09,146-146Z"/>
-    <path id="Our_People_Excellence" data-name="Our People_Excellence" class="cls-5" d="M492.33,170.33l-29-49c-62.06,35.91-108.09,81.94-144,144l49,29c30.38-52.5,71.5-93.62,124-124Z"/>
-    <path id="Our_People_Guidance" data-name="Our People_Guidance" class="cls-19" d="M538.33,250.32l-43-75c-52.5,30.38-91.62,69.5-122,122l75,43c22.3-38.54,51.46-67.7,90-90Z"/>
+    <path id="People_Vision" data-name="Our People_Vision" class="cls-47" d="M460.33,116.33l-19-33c-68.74,39.77-120.23,91.26-160,160l33,19c35.91-62.06,83.94-110.09,146-146Z"/>
+    <path id="People_Excellence" data-name="Our People_Excellence" class="cls-5" d="M492.33,170.33l-29-49c-62.06,35.91-108.09,81.94-144,144l49,29c30.38-52.5,71.5-93.62,124-124Z"/>
+    <path id="People_Guidance" data-name="Our People_Guidance" class="cls-19" d="M538.33,250.32l-43-75c-52.5,30.38-91.62,69.5-122,122l75,43c22.3-38.54,51.46-67.7,90-90Z"/>
   </g>
   <g id="Operations">
     <path id="Operations_Vision" class="cls-31" d="M666.33,59.33V21.33c-82.53,0-153.36,20.44-220,59l19,33c60.17-34.81,126.49-54,201-54Z"/>
@@ -243,10 +243,10 @@
     <path id="Operations_Guidance" class="cls-24" d="M666.33,214.33v-86c-63.03,0-115.1,14.55-166,44l43,75c37.36-21.62,76.73-33,123-33Z"/>
   </g>
   <g id="Facilitation">
-    <path id="Facilitation_Circle" data-name="Facilitation Circle" class="cls-62" d="M669.33,220.33c-138.62,0-251,112.38-251,251s112.38,251,251,251,251-112.38,251-251-112.38-251-251-251Zm0,394c-78.98,0-143-64.02-143-143s64.02-143,143-143,143,64.02,143,143-64.02,143-143,143Z"/>
+    <path id="Circle_Facilitation" data-name="Facilitation Circle" class="cls-62" d="M669.33,220.33c-138.62,0-251,112.38-251,251s112.38,251,251,251,251-112.38,251-251-112.38-251-251-251Zm0,394c-78.98,0-143-64.02-143-143s64.02-143,143-143,143,64.02,143,143-64.02,143-143,143Z"/>
   </g>
   <g id="Implementation">
-    <circle id="Implementation_Circle" data-name="Implementation Circle" class="cls-63" cx="669.33" cy="471.33" r="137"/>
+    <circle id="Circle_Implementation" data-name="Implementation Circle" class="cls-63" cx="669.33" cy="471.33" r="137"/>
   </g>
   <g id="Areas_of_Focus_Labels" data-name="Areas of Focus_Labels">
     <text class="cls-34" transform="translate(1029.37 795.3)"><tspan class="cls-53" x="0" y="0">C</tspan><tspan x="12.85" y="0">onstru</tspan><tspan class="cls-33" x="74.59" y="0">c</tspan><tspan x="85.37" y="0">tion</tspan><tspan class="cls-51" x="-9.53" y="24">A</tspan><tspan x="4.17" y="24">dminist</tspan><tspan class="cls-59" x="76.17" y="24">r</tspan><tspan x="83.8" y="24">ation</tspan></text>
