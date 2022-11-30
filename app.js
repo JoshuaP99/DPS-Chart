@@ -32,9 +32,11 @@ $(document).ready(function(){
         console.log("loaded successfully")
         
         $("path").click(function(evt) {
-            console.log(evt.target.id.split('_'))
-            var parsedStringArray = evt.target.id.split('_')
+            console.log(evt.target.id.split('_'));
+            var parsedStringArray = evt.target.id.split('_');
+            var pathID = ("#" + (evt.target.id))
             areaOfFocusBody(parsedStringArray[0]);
+            colorChanger(pathID);
         });
     })
     $("#RoleTypesSVG").load("/src/Role-Types-Graphic.svg", function(){
@@ -46,22 +48,34 @@ $(document).ready(function(){
             console.log(evt.target.id.split('_'))
             var parsedStringArray = evt.target.id.split('_')
             roleTypesBody(parsedStringArray[0]);
+            var pathID = ("#" + (evt.target.id))
+            colorChanger(pathID)
         });
 
         $("circle").click(function(evt) {
             console.log(evt.target.id.split('_'))
             var parsedStringArray = evt.target.id.split('_')
             roleTypesBody(parsedStringArray[0]);
+            $("circle").css("fill", "#f1562c");
+            $("path").css("filter", "opacity(25%)");
         });
     })
 });
+
+
+function colorChanger(pathName){
+    $("path").css("filter", "opacity(25%)")
+    $("circle").css("filter", "opacity(25%)")
+    $(pathName).css("fill", "#f1562c")
+    $(pathName).css("filter", "opacity(100%)")
+}
 
 //The Jquery unction that will draw the div and update based
 //on the info given to it
 function areaOfFocusBody(areaOfFocus) {
     $("#DOM").append(`
     <div class="textbox">
-        <span id="close" onclick="this.parentNode.remove(); return false;" class="btn btn-default large">
+        <span id="close" onclick="this.parentNode.remove(); location.reload(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${focusCard[areaOfFocus]?.title ?? 'none'}</h2>
@@ -70,7 +84,12 @@ function areaOfFocusBody(areaOfFocus) {
             <div class="container">
                 <div class="row">
                     <div class="col text-center" style="padding-bottom: 1rem;">
-                        <button class="btn btn-primary" role="button">Show Employees in this Section</button>
+                        <a target="_blank" rel="noopener noreferrer" href="${focusCard[areaOfFocus]?.url ?? 'none'}">
+                            <button class="btn btn-primary" role="button">
+                                Show Employees in this Section
+                                <img src="/src/Esc X.svg" height="25" width="25"></img>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -84,7 +103,7 @@ function areaOfFocusBody(areaOfFocus) {
 function roleTypesBody(role) {
     $("#DOM").append(`
     <div class="textbox">
-        <span id="close" onclick="this.parentNode.remove(); return false;" class="btn btn-default large">
+        <span id="close" onclick="this.parentNode.remove(); location.reload(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${roleTypes[role]?.title ?? 'none'}</h2>
