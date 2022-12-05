@@ -21,7 +21,7 @@ h1 {
 
 h2 {
     font-family: BelyDisplay;
-    display: flexbox;
+    display: flex;
     margin-left: 3rem;
     margin-right: 3rem;
     align-items: center;
@@ -34,9 +34,12 @@ h2 {
 
 h3 {
     font-family: BelyDisplay;
-    display: flexbox;
+    display: flex;
+    padding: 0px;
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-top: -.8rem;
+    margin-bottom: -.8rem;
     text-align: left;
     font: normal normal bold 25px/55px Montserrat;
     letter-spacing: 0px;
@@ -46,9 +49,12 @@ h3 {
 
 h4 {
     font-family: BelyDisplay;
-    display: flexbox;
+    display: flex;
+    padding: 0px;
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-top: -.8rem;
+    margin-bottom: -.8rem;
     align-items: center;
     text-align: left;
     letter-spacing: 0px;
@@ -56,7 +62,6 @@ h4 {
     font: normal normal bold 18px/22px Montserrat;
     color: #483735;
 }
-
 
 .card-body{
     font-family: Montserrat-Regular;
@@ -75,8 +80,6 @@ h4 {
     font-family: Montserrat-Regular;
     margin-left: 3rem;
     margin-right: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     text-align: left;
     font: normal normal normal 25px/30px Montserrat;
     letter-spacing: 0px;
@@ -88,6 +91,8 @@ h4 {
     font-family: Montserrat-Regular;
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: left;
@@ -167,6 +172,18 @@ a{
     margin-bottom: 1rem;
 }
 
+.btn-secondary{
+    font-family: Montserrat-Regular;
+    text-align: center;
+    font: normal normal 18px/22px Montserrat;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    border-color:#FFFFFF;
+    background: #888888 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    padding: .5rem;
+}
+
 .btn-primary:hover{
     transition: 2ms;
     background: #291f1e 0% 0% no-repeat padding-box;
@@ -203,6 +220,17 @@ a{
     margin-left: 2rem;
 }
 
+.card-artwork{
+    display: block;
+    align-items: right;
+    margin-left: auto;
+    width: 40%;
+}
+
 .row{
     margin-left: 1rem;
+}
+
+.blackBack{
+    fill-opacity: 10%;
 }
