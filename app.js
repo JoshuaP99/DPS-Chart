@@ -92,6 +92,7 @@ function colorChanger(pathName){
 }
 
 //Functionality to close a div
+//New line item
 function closeButton(){
     this.parentNode.remove(); 
     location.reload(); 
