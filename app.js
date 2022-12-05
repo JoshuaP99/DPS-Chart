@@ -91,6 +91,8 @@ function colorChanger(pathName){
     $(pathName).css("filter", "opacity(100%)")
 }
 
+//Functionality to close a div
+//New line item
 function closeButton(){
     this.parentNode.remove(); 
     location.reload(); 
