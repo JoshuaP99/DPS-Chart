@@ -12,7 +12,6 @@ h1 {
     font-family: BelyDisplay;
     font-size: 3rem;
     text-align: left;
-    font: normal normal normal 47px/57px Bely Display;
     letter-spacing: 0px;
     color: #483735;
     opacity: 1;
@@ -41,7 +40,7 @@ h3 {
     margin-top: -.8rem;
     margin-bottom: -.8rem;
     text-align: left;
-    font: normal normal bold 25px/55px Montserrat;
+    font: normal normal bold 1.5rem/3.4rem Montserrat;
     letter-spacing: 0px;
     color: #F0532D;
     opacity: 1; 
@@ -231,6 +230,6 @@ a{
     margin-left: 1rem;
 }
 
-.blackBack{
-    fill-opacity: 10%;
+.pathFill{
+    opacity: 20%;
 }
