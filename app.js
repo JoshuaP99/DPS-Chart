@@ -27,98 +27,118 @@ $.getJSON("", function(json){
     console.log("Done")
 })
 
-
 //JQuery load function to bring in the local SVG into the 
 //HTML div with the ID SVGGraphic. The function returns
 //a console log that alerts when loaded in and styles the
 //graphic
-$(document).ready(function(){
-    $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(event){
-        $("#SVGGraphic svg").css("height", "40vw");
+
+//     $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(event){
+//         $("#SVGGraphic svg").css("height", "40vw");
         
-        $("path").on("click", function(evt) {
-            colorReset();
-            var parsedStringArray = evt.target.id.split('_');
-            var pathID = ("#" + (evt.target.id))
-            if($('#menucontainer').length == 0){
-                areaOfFocusBody(parsedStringArray[0])
-            } else {
-                $('#menucontainer').remove()
-                areaOfFocusBody(parsedStringArray[0])
-            }
-            colorChanger(pathID);  
-        });
-    })
-    $("#RoleTypesSVG").load("/src/Role-Types-Graphic.svg", function(){
-        $("#RoleTypesSVG svg").css("height", "40vw");
+//         $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
+//             var parsedStringArray = evt.target.id.split('_');
+//             var pathID = ("#" + (evt.target.id))
+//             console.log(parsedStringArray[0])
+//             if($('#menucontainer').length == 0){
+//                 areaOfFocusBody(parsedStringArray[0])
+//             } else {
+//                 $('#menucontainer').remove()
+//                 areaOfFocusBody(parsedStringArray[0])
+//             }
+//             colorChanger(pathID, parsedStringArray[0]);  
+//         });
+//     })
 
-        console.log("loaded successfully")
 
-        $("path").on("click", function(evt) {
-            var parsedStringArray = evt.target.id.split('_')
-            var pathID = ("#" + (evt.target.id))
-            var pathClass = (evt.target.class)
-            colorReset(pathID, pathClass);
-            if($('#menucontainer').length == 0){
-                roleTypesBody(parsedStringArray[0]);
-            } else {
-                $('#menucontainer').remove()
-                roleTypesBody(parsedStringArray[0]);
-            }
-            pathFiller(pathID)
-        });
-        $("circle").on("click", function(evt) {
-            var parsedStringArray = evt.target.id.split('_')
-            var pathID = ("#" + (evt.target.id))
-            console.log($(this).attr("class"))
-            $(this).toggle();
-            colorReset();
-            if($('#menucontainer').length == 0){
-                roleTypesBody(parsedStringArray[0]);
-            } else {
-                $('#menucontainer').remove()
-                roleTypesBody(parsedStringArray[0]);
-            }
-            colorChanger(pathID)
-        });
-    })
-    $("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
-        $("#PathwaySVG svg").css("height", "40vw");
 
-        console.log("loaded successfully")
+// $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
+//     $("#RoleTypesSVG svg").css("height", "40vw");
 
-        $("circle").on("click", function(evt) {
-            colorReset();
-            console.log(evt.target.id.split('_'))
-            var parsedStringArray = evt.target.id.split('_')
-            employeeCard(parsedStringArray[0]);
-            $("circle").css("fill", "#f1562c");
-            $("path").css("filter", "opacity(25%)");
-        });
-    })
-});
+//     console.log("loaded successfully")
 
-function colorChanger(pathName){
+//     $("[id$='Selected-Role-Type']").on("click", function(evt) {
+//         var parsedStringArray = evt.target.id.split('_')
+//         var pathID = ("#" + (evt.target.id))
+//         if($('#menucontainer').length == 0){
+//             roleTypesBody(parsedStringArray[0]);
+//         } else {
+//             $('#menucontainer').remove()
+//             roleTypesBody(parsedStringArray[0]);
+//         }
+//         pathToggle(pathID);
+//     });
+// })
+
+$("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
+    $("#PathwaySVG svg").css("height", "40vw");
+
+    console.log("loaded successfully")
+
+    $("circle").on("click", function(evt) {
+        var parsedStringArray = evt.target.id.split('_')
+        employeeCard(parsedStringArray[0]);
+        $("circle").css("fill", "#f1562c");
+        $("path").css("filter", "opacity(25%)");
+    });
+})
+
+function colorChanger(pathName, title){
     $("path").css("opacity", "20%")
-    $("circle").css("filter", "opacity(20%)")
+    $("circle").css("opacity", "20%")
     $(pathName).css("opacity", "100%")
+    $(`[id*='${title}'`).css("opacity", "100%")
 }
 
 function colorReset(pathName){
-    $("path").css("filter", "opacity(100%)")
-    $("circle").css("filter", "opacity(100%)")
-    $(pathName).css("filter", "opacity(0%)")
+    $("path").css("opacity", "100%")
+    $("circle").css("opacity", "100%")
+    $(pathName).css("opacity", "0%")
 }
 
-function pathFiller(pathName){
-    $("path").css("filter", "opacity(20%)")
-    $("circle").css("filter", "opacity(20%)")
-    $(pathName).css("filter", "opacity(100%)")
-    $(pathName).css("fill", "#f1562c")
+function pathToggle(pathName){
+    $("[id$='Selected-Role-Type']").css("opacity", "0%")
+    $(pathName).css("opacity", "100%")
+}
+
+function pathReset(){
+    $("[id$='Selected-Role-Type']").css("opacity", "0%")
 }
 
 //The Jquery unction that will draw the div and update based
 //on the info given to it
+
+function areaOfFocusPage(){
+    if($('#menucontainer').length == 0){
+        $("#MainBody").append(`
+            <div>
+                <h1>Areas of Focus</h1>
+            </div>
+            </br>
+            <div class="d-flex justify-content-left" id="DOM">
+                <div class="mySVG" id="SVGGraphic">
+            </div>
+        `)
+    } else {
+        $('#menucontainer').remove()
+    }
+    $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(){
+        $("#SVGGraphic svg").css("height", "40vw");
+        
+        $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_');
+            var pathID = ("#" + (evt.target.id))
+            console.log(parsedStringArray[0])
+            if($('#menucontainer').length == 0){
+                areaOfFocusBody(parsedStringArray[0])
+            } else {
+                $('#menucontainer').remove()
+                areaOfFocusBody(parsedStringArray[0])
+            }
+            colorChanger(pathID, parsedStringArray[0]);  
+        });
+    })
+}
+
 function areaOfFocusBody(areaOfFocus) {
     $("#DOM").append(`
         <div class="textbox" id="menucontainer">
@@ -140,15 +160,47 @@ function areaOfFocusBody(areaOfFocus) {
                     </div>
                 </div>
             </div>
-        </div>`)}
+        </div>`
+        )}
 
+function roleTypesPage(){
+    if($('#menucontainer').length == 0){
+        $("#MainBody").append(`
+            <div>
+                <h1>Role Types</h1>
+            </div>
+            </br>
+            <div class="d-flex justify-content-left" id="DOM">
+                <div class="mySVG" id="RoleTypesSVG">
+            </div>
+        `)
+    } else {
+        $('#menucontainer').remove()
+    } $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
+        $("#RoleTypesSVG svg").css("height", "40vw");
+    
+        console.log("loaded successfully")
+    
+        $("[id$='Selected-Role-Type']").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_')
+            var pathID = ("#" + (evt.target.id))
+            if($('#menucontainer').length == 0){
+                roleTypesBody(parsedStringArray[0]);
+            } else {
+                $('#menucontainer').remove()
+                roleTypesBody(parsedStringArray[0]);
+            }
+            pathToggle(pathID);
+        });
+    })
+}
 //The Jquery unction that will draw the div and update based
 //on the info given to it. This is for the roletypes page when
 //cicking one of the highlighted pieces 
 function roleTypesBody(role) {
     $("#DOM").append(`
         <div class="textbox" id="menucontainer">
-            <span onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
+            <span onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
                 <img src="/src/Esc X.svg" height="33" width="33"></img>
             </span>
             <h2>${roleTypes[role]?.title ?? 'none'}</h2>
@@ -176,7 +228,7 @@ function employeeCard(employee){
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <div class="card-body" id="card-div">
-            <img src="">${employeeList[employee]?.image ?? 'none'}</img>
+            <img src="${employeeList[employee]?.image ?? 'https://images.saymedia-content.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTczOTM5NzMzODQyMzcxNjQ4/guts-a-berserk-character-analysis.jpg'}" class="card-profile-picture"></img>
             <br><h2>${employeeList[employee]?.name ?? 'none'}</h2>
             <h3>${employeeList[employee]?.position ?? 'none'}</h3>
             <br><div class="container">
