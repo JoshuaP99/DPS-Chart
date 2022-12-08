@@ -20,68 +20,6 @@ $.getJSON("/src/Role-types.json", function(json){
     console.log("Done")
 })
 
-$.getJSON("", function(json){
-    console.log(json)
-    employeeList = JSON.parse(JSON.stringify(json));
-}).then(function(){
-    console.log("Done")
-})
-
-//JQuery load function to bring in the local SVG into the 
-//HTML div with the ID SVGGraphic. The function returns
-//a console log that alerts when loaded in and styles the
-//graphic
-
-//     $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(event){
-//         $("#SVGGraphic svg").css("height", "40vw");
-        
-//         $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
-//             var parsedStringArray = evt.target.id.split('_');
-//             var pathID = ("#" + (evt.target.id))
-//             console.log(parsedStringArray[0])
-//             if($('#menucontainer').length == 0){
-//                 areaOfFocusBody(parsedStringArray[0])
-//             } else {
-//                 $('#menucontainer').remove()
-//                 areaOfFocusBody(parsedStringArray[0])
-//             }
-//             colorChanger(pathID, parsedStringArray[0]);  
-//         });
-//     })
-
-
-
-// $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
-//     $("#RoleTypesSVG svg").css("height", "40vw");
-
-//     console.log("loaded successfully")
-
-//     $("[id$='Selected-Role-Type']").on("click", function(evt) {
-//         var parsedStringArray = evt.target.id.split('_')
-//         var pathID = ("#" + (evt.target.id))
-//         if($('#menucontainer').length == 0){
-//             roleTypesBody(parsedStringArray[0]);
-//         } else {
-//             $('#menucontainer').remove()
-//             roleTypesBody(parsedStringArray[0]);
-//         }
-//         pathToggle(pathID);
-//     });
-// })
-
-$("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
-    $("#PathwaySVG svg").css("height", "40vw");
-
-    console.log("loaded successfully")
-
-    $("circle").on("click", function(evt) {
-        var parsedStringArray = evt.target.id.split('_')
-        employeeCard(parsedStringArray[0]);
-        $("circle").css("fill", "#f1562c");
-        $("path").css("filter", "opacity(25%)");
-    });
-})
-
 function colorChanger(pathName, title){
     $("path").css("opacity", "20%")
     $("circle").css("opacity", "20%")
@@ -108,22 +46,18 @@ function pathReset(){
 //on the info given to it
 
 function areaOfFocusPage(){
-    if($('#menucontainer').length == 0){
-        $("#MainBody").append(`
-            <div>
-                <h1>Areas of Focus</h1>
-            </div>
-            </br>
-            <div class="d-flex justify-content-left" id="DOM">
-                <div class="mySVG" id="SVGGraphic">
-            </div>
-        `)
-    } else {
-        $('#menucontainer').remove()
-    }
+    $('#MainBody').empty()
+    $("#MainBody").append(`
+    <div>
+        <h1>Areas of Focus</h1>
+    </div>
+    </br>
+    <div class="d-flex justify-content-left" id="DOM">
+        <div class="mySVG" id="SVGGraphic">
+    </div>
+    `)
     $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(){
         $("#SVGGraphic svg").css("height", "40vw");
-        
         $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
             var parsedStringArray = evt.target.id.split('_');
             var pathID = ("#" + (evt.target.id))
@@ -141,46 +75,42 @@ function areaOfFocusPage(){
 
 function areaOfFocusBody(areaOfFocus) {
     $("#DOM").append(`
-        <div class="textbox" id="menucontainer">
-            <span onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
-                <img src="/src/Esc X.svg" height="33" width="33"></img>
-            </span>
-            <h2>${focusCard[areaOfFocus]?.title ?? 'none'}</h2>
-            <div class="card-body" id="card-div">
-                <p class="card-body" style="padding: 1rem">${focusCard[areaOfFocus]?.body ?? 'none'}</p>
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center" style="padding-bottom: 1rem;">
-                            <a target="_blank" rel="noopener noreferrer" href="${focusCard[areaOfFocus]?.url ?? 'none'}">
-                                <button class="btn btn-primary" role="button">
-                                    Show Employees in this Section <img src="/src/opens-new-tab-arrow.svg" height="20">
-                                </button>
-                            </a>
-                        </div>
+    <div class="textbox" id="menucontainer">
+        <span onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
+            <img src="/src/Esc X.svg" height="33" width="33"></img>
+        </span>
+        <h2>${focusCard[areaOfFocus]?.title ?? 'none'}</h2>
+        <div class="card-body" id="card-div">
+            <p class="card-body" style="padding: 1rem">${focusCard[areaOfFocus]?.body ?? 'none'}</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center" style="padding-bottom: 1rem;">
+                        <a target="_blank" rel="noopener noreferrer" href="${focusCard[areaOfFocus]?.url ?? 'none'}">
+                            <button class="btn btn-primary" role="button">
+                                Show Employees in this Section <img src="/src/opens-new-tab-arrow.svg" height="20">
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>`
-        )}
+        </div>
+    </div>`
+    )
+}
 
 function roleTypesPage(){
-    if($('#menucontainer').length == 0){
-        $("#MainBody").append(`
-            <div>
-                <h1>Role Types</h1>
-            </div>
-            </br>
-            <div class="d-flex justify-content-left" id="DOM">
-                <div class="mySVG" id="RoleTypesSVG">
-            </div>
-        `)
-    } else {
-        $('#menucontainer').remove()
-    } $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
+    $('#MainBody').empty();
+    $("#MainBody").append(`
+    <div>
+        <h1>Role Types</h1>
+    </div>
+    </br>
+    <div class="d-flex justify-content-left" id="DOM">
+        <div class="mySVG" id="RoleTypesSVG">
+    </div>
+    `);
+    $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
         $("#RoleTypesSVG svg").css("height", "40vw");
-    
-        console.log("loaded successfully")
-    
         $("[id$='Selected-Role-Type']").on("click", function(evt) {
             var parsedStringArray = evt.target.id.split('_')
             var pathID = ("#" + (evt.target.id))
@@ -199,27 +129,51 @@ function roleTypesPage(){
 //cicking one of the highlighted pieces 
 function roleTypesBody(role) {
     $("#DOM").append(`
-        <div class="textbox" id="menucontainer">
-            <span onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
-                <img src="/src/Esc X.svg" height="33" width="33"></img>
-            </span>
-            <h2>${roleTypes[role]?.title ?? 'none'}</h2>
-            <div id="card-div">
-                <p class="role-subtitle">${roleTypes[role]?.subtitle ?? 'none'}</p>
-                <h3>CHARGE</h3>
-                <h4>${roleTypes[role]?.chargesubtitle ?? 'none'}</h4>
-                <p class="role-text">${roleTypes[role]?.chargebody ?? 'none'}</p>
-                <h3>SCOPE</h3>
-                <h4>${roleTypes[role]?.scopesubtitle ?? 'none'}</h4>
-                <p class="role-text">${roleTypes[role]?.scopebody ?? 'none'}</p>
-                <h3>FORECASTING</h3>
-                <h4>${roleTypes[role]?.forecastingsubtitle ?? 'none'}</h4>
-                <p class="role-text">${roleTypes[role]?.forecastingbody ?? 'none'}</p>
-                <h3>COMMUNICATION + RESPONSIBILITY</h3>
-                <h4>${roleTypes[role]?.communicationsubtitle ?? 'none'}</h4>
-                <p class="role-text">${roleTypes[role]?.communicationbody ?? 'none'}</p>
-            </div>
-        </div>`)} 
+    <div class="textbox" id="menucontainer">
+        <span onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
+            <img src="/src/Esc X.svg" height="33" width="33"></img>
+        </span>
+        <h2>${roleTypes[role]?.title ?? 'none'}</h2>
+        <div id="card-div">
+            <p class="role-subtitle">${roleTypes[role]?.subtitle ?? 'none'}</p>
+            <h3>CHARGE</h3>
+            <h4>${roleTypes[role]?.chargesubtitle ?? 'none'}</h4>
+            <p class="role-text">${roleTypes[role]?.chargebody ?? 'none'}</p>
+            <h3>SCOPE</h3>
+            <h4>${roleTypes[role]?.scopesubtitle ?? 'none'}</h4>
+            <p class="role-text">${roleTypes[role]?.scopebody ?? 'none'}</p>
+            <h3>FORECASTING</h3>
+            <h4>${roleTypes[role]?.forecastingsubtitle ?? 'none'}</h4>
+            <p class="role-text">${roleTypes[role]?.forecastingbody ?? 'none'}</p>
+            <h3>COMMUNICATION + RESPONSIBILITY</h3>
+            <h4>${roleTypes[role]?.communicationsubtitle ?? 'none'}</h4>
+            <p class="role-text">${roleTypes[role]?.communicationbody ?? 'none'}</p>
+        </div>
+    </div>`
+    )
+} 
+
+function individualizedPathwayPage(){
+    $('#MainBody').empty();
+    $("#MainBody").append(`
+    <div>
+        <h1>Individualized Pathway</h1>
+    </div>
+    </br>
+    <div class="d-flex justify-content-left" id="DOM">
+        <div class="mySVG" id="PathwaySVG"></div>
+    </div>`)
+    $("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
+        $("#PathwaySVG svg").css("height", "40vw");
+        $("circle").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_')
+            employeeCard(parsedStringArray[0]);
+            $("circle").css("fill", "#f1562c");
+            $("path").css("filter", "opacity(25%)");
+        });
+    })
+}
+
 
 function employeeCard(employee){
     $('#DOM').append(`
