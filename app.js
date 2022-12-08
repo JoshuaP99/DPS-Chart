@@ -1,11 +1,10 @@
-//Area of Focus object to hold data as an object
+const { get } = require("jquery")
+
 //Role Types object as well
 var focusCard = {}
 var roleTypes = {}
 var employeeList = {}
 
-//Asynchronous function to pull in local JSON file holding 
-//the data for the information on the Area of Focus wheel 
 $.getJSON("/src/Areas-of-focus.json", function(json){
     console.log(json)
     focusCard = JSON.parse(JSON.stringify(json));
@@ -20,91 +19,83 @@ $.getJSON("/src/Role-types.json", function(json){
     console.log("Done")
 })
 
-$.getJSON("", function(json){
-    console.log(json)
-    employeeList = JSON.parse(JSON.stringify(json));
-}).then(function(){
-    console.log("Done")
-})
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ * @param {string} title 
+ * Title refers to a specific string in the id to
+ * refer to all ids that contain a specific ending text
+ */
 
-
-//JQuery load function to bring in the local SVG into the 
-//HTML div with the ID SVGGraphic. The function returns
-//a console log that alerts when loaded in and styles the
-//graphic
-$(document).ready(function(){
-    $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(event){
-        $("#SVGGraphic svg").css("height", "1000", "width", "1000px");
-
-        console.log("loaded successfully")
-        
-        $("path").on("click", function(evt) {
-            var parsedStringArray = evt.target.id.split('_');
-            var pathID = ("#" + (evt.target.id))
-            $(pathID).toggleClass("blackBack")
-            console.log(parsedStringArray);
-            console.log(pathID);
-            areaOfFocusBody(parsedStringArray[0]);
-            colorChanger(pathID); 
-        });
-    })
-    $("#RoleTypesSVG").load("/src/Role-Types-Graphic.svg", function(){
-        $("#RoleTypesSVG svg").css("height", "1000", "width", "1000");
-
-        console.log("loaded successfully")
-
-        $("path").on("click", function(evt) {
-            console.log(evt.target.id.split('_'))
-            var parsedStringArray = evt.target.id.split('_')
-            roleTypesBody(parsedStringArray[0]);
-            var pathID = ("#" + (evt.target.id))
-            colorChanger(pathID)
-        });
-        $("circle").on("click", function(evt) {
-            console.log(evt.target.id.split('_'))
-            var parsedStringArray = evt.target.id.split('_')
-            roleTypesBody(parsedStringArray[0]);
-            $("circle").css("fill", "#f1562c");
-            $("path").css("filter", "opacity(25%)");
-        });
-    })
-    $("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
-        $("#PathwaySVG svg").css("height", "1000", "width", "1000");
-
-        console.log("loaded successfully")
-
-        $("circle").on("click", function(evt) {
-            console.log(evt.target.id.split('_'))
-            var parsedStringArray = evt.target.id.split('_')
-            employeeCard(parsedStringArray[0]);
-            $("circle").css("fill", "#f1562c");
-            $("path").css("filter", "opacity(25%)");
-        });
-    })
-});
-
-
-function colorChanger(pathName){
-    $("path").css("filter", "opacity(25%)")
-    $("circle").css("filter", "opacity(25%)")
-    $(pathName).css("fill", "#f1562c")
-    $(pathName).css("filter", "opacity(100%)")
+function colorChanger(pathName, title){
+    $("path").css("opacity", "20%")
+    $("circle").css("opacity", "20%")
+    $(pathName).css("opacity", "100%")
+    $(`[id*='${title}'`).css("opacity", "100%")
 }
 
-//Functionality to close a div
-//New line item
-function closeButton(){
-    this.parentNode.remove(); 
-    location.reload(); 
-    return false;
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ */
+
+function colorReset(pathName){
+    $("path").css("opacity", "100%")
+    $("circle").css("opacity", "100%")
+    $(pathName).css("opacity", "0%")
+}
+
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ */
+
+function pathToggle(pathName){
+    $("[id$='Selected-Role-Type']").css("opacity", "0%")
+    $(pathName).css("opacity", "100%")
+}
+
+function pathReset(){
+    $("[id$='Selected-Role-Type']").css("opacity", "0%")
 }
 
 //The Jquery unction that will draw the div and update based
 //on the info given to it
+
+function areaOfFocusPage(){
+    $('#MainBody').empty()
+    $("#MainBody").append(`
+        <div>
+            <h1>Areas of Focus</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="SVGGraphic">
+        </div>
+    `)
+    $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(){
+        $("#SVGGraphic svg").css("height", "40vw");
+        $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_');
+            var pathID = ("#" + (evt.target.id))
+            if($('#menucontainer').length == 0){
+                areaOfFocusBody(parsedStringArray[0])
+            } else {
+                $('#menucontainer').remove()
+                areaOfFocusBody(parsedStringArray[0])
+            }
+            colorChanger(pathID, parsedStringArray[0]); 
+        });
+    })
+}
+
 function areaOfFocusBody(areaOfFocus) {
     $("#DOM").append(`
     <div class="textbox" id="menucontainer">
-        <span id="closeButton" class="btn btn-default large">
+        <span onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${focusCard[areaOfFocus]?.title ?? 'none'}</h2>
@@ -122,16 +113,43 @@ function areaOfFocusBody(areaOfFocus) {
                 </div>
             </div>
         </div>
-    </div>`)
+    </div>`
+    )
 }
 
+function roleTypesPage(){
+    $('#MainBody').empty();
+    $("#MainBody").append(`
+        <div>
+            <h1>Role Types</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="RoleTypesSVG">
+        </div>
+    `);
+    $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
+        $("#RoleTypesSVG svg").css("height", "40vw");
+        $("[id$='Selected-Role-Type']").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_')
+            var pathID = ("#" + (evt.target.id))
+            if($('#menucontainer').length == 0){
+                roleTypesBody(parsedStringArray[0]);
+            } else {
+                $('#menucontainer').remove()
+                roleTypesBody(parsedStringArray[0]);
+            }
+            pathToggle(pathID);
+        });
+    })
+}
 //The Jquery unction that will draw the div and update based
 //on the info given to it. This is for the roletypes page when
 //cicking one of the highlighted pieces 
 function roleTypesBody(role) {
     $("#DOM").append(`
-    <div class="textbox">
-        <span id="close" onclick="this.parentNode.remove(); location.reload(); return false;" class="btn btn-default large">
+    <div class="textbox" id="menucontainer">
+        <span onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${roleTypes[role]?.title ?? 'none'}</h2>
@@ -150,8 +168,32 @@ function roleTypesBody(role) {
             <h4>${roleTypes[role]?.communicationsubtitle ?? 'none'}</h4>
             <p class="role-text">${roleTypes[role]?.communicationbody ?? 'none'}</p>
         </div>
-    </div>`)
+    </div>`
+    )
+} 
+
+function individualizedPathwayPage(){
+    $('#MainBody').empty();
+    $("#MainBody").append(`
+        <div>
+            <h1>Individualized Pathway</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="PathwaySVG"></div>
+        </div>
+    `)
+    $("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
+        $("#PathwaySVG svg").css("height", "40vw");
+        $("circle").on("click", function(evt) {
+            var parsedStringArray = evt.target.id.split('_')
+            employeeCard(parsedStringArray[0]);
+            $("circle").css("fill", "#f1562c");
+            $("path").css("filter", "opacity(25%)");
+        });
+    })
 }
+
 
 function employeeCard(employee){
     $('#DOM').append(`
@@ -160,7 +202,7 @@ function employeeCard(employee){
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <div class="card-body" id="card-div">
-            <img src="">${employeeList[employee]?.image ?? 'none'}</img>
+            <img src="${employeeList[employee]?.image ?? 'https://images.saymedia-content.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTczOTM5NzMzODQyMzcxNjQ4/guts-a-berserk-character-analysis.jpg'}" class="card-profile-picture"></img>
             <br><h2>${employeeList[employee]?.name ?? 'none'}</h2>
             <h3>${employeeList[employee]?.position ?? 'none'}</h3>
             <br><div class="container">

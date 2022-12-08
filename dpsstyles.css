@@ -12,7 +12,6 @@ h1 {
     font-family: BelyDisplay;
     font-size: 3rem;
     text-align: left;
-    font: normal normal normal 47px/57px Bely Display;
     letter-spacing: 0px;
     color: #483735;
     opacity: 1;
@@ -26,7 +25,7 @@ h2 {
     margin-right: 3rem;
     align-items: center;
     text-align: left;
-    font: normal normal normal 54px/65px Bely Display;
+    font: normal normal normal 3rem/65px Bely Display;
     letter-spacing: 0px;
     color: #483735;
     opacity: 1;
@@ -41,7 +40,7 @@ h3 {
     margin-top: -.8rem;
     margin-bottom: -.8rem;
     text-align: left;
-    font: normal normal bold 25px/55px Montserrat;
+    font: normal normal bold 1.5rem/3.4rem Montserrat;
     letter-spacing: 0px;
     color: #F0532D;
     opacity: 1; 
@@ -81,7 +80,7 @@ h4 {
     margin-left: 3rem;
     margin-right: 3rem;
     text-align: left;
-    font: normal normal normal 25px/30px Montserrat;
+    font: normal normal normal 1.5rem/1.9rem Montserrat;
     letter-spacing: 0px;
     color: #483735;
     opacity: 1;
@@ -128,12 +127,13 @@ a{
     display: flex; 
     align-items: center;  
     height: 5rem; 
-    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border: 0;
     text-decoration: none;
 }
 
-.nav-link:hover svg{
-    filter: invert(100%) brightness(118%) contrast(119%);
+.nav-link:hover {
+    opacity: 60%;
 }
 
 .nav-text:hover{
@@ -185,7 +185,6 @@ a{
 }
 
 .btn-primary:hover{
-    transition: 2ms;
     background: #291f1e 0% 0% no-repeat padding-box;
 }
 
@@ -205,19 +204,17 @@ a{
 .textbox{
     background-color: #fff;
     width: 40rem; 
-    margin-right: 5rem;
+    margin-left: 3vw;
+    margin-right: 2rem;
     box-shadow: 0px 3px 6px #00000029;
     border-radius: 52px;
+    padding-bottom: 1rem;
     opacity: 1;
-}
-
-.link-icon:hover{
-    filter: invert(20%) brightness(90%) contrast(100%);
 }
 
 .mySVG{
     margin-right: 8rem; 
-    margin-left: 2rem;
+    margin-left: 4rem;
 }
 
 .card-artwork{
@@ -227,10 +224,28 @@ a{
     width: 40%;
 }
 
+.card-profile-picture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 1rem;
+    width: 80%;
+}
+
+
 .row{
     margin-left: 1rem;
 }
 
-.blackBack{
-    fill-opacity: 10%;
+.pathFill{
+    opacity: 20%;
+}
+
+.click-box{
+    pointer-events: bounding-box;
+}
+
+.transparent-click{
+    pointer-events: none;
 }
