@@ -359,18 +359,23 @@
       }
 
       #Excellence-Circle_Selected-Role-Type{opacity: 0%;}
+      #Excellence-Circle_Selected-Role-Type{transition: .2s;}
       #Excellence-Circle_Selected-Role-Type:hover{opacity: 100%;}
 
       #Vision-Circle_Selected-Role-Type{opacity: 0%;}
+      #Vision-Circle_Selected-Role-Type{transition: .2s;}
       #Vision-Circle_Selected-Role-Type:hover{opacity: 100%;}
 
       #Guidance-Circle_Selected-Role-Type{opacity: 0%;}
+      #Guidance-Circle_Selected-Role-Type{transition: .2s;}
       #Guidance-Circle_Selected-Role-Type:hover{opacity: 100%;}
 
       #Facilitation-Circle_Selected-Role-Type{opacity: 0%;}
+      #Facilitation-Circle_Selected-Role-Type{transition: .2s;}
       #Facilitation-Circle_Selected-Role-Type:hover{opacity: 100%;}
 
       #Implementation-Circle_Selected-Role-Type{opacity: 0%;}
+      #Implementation-Circle_Selected-Role-Type{transition: .2s;}
       #Implementation-Circle_Selected-Role-Type:hover{opacity: 100%;}
 
     </style>

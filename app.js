@@ -1,5 +1,3 @@
-const { get } = require("jquery")
-
 //Role Types object as well
 var focusCard = {}
 var roleTypes = {}
@@ -47,12 +45,6 @@ function colorReset(pathName){
     $(pathName).css("opacity", "0%")
 }
 
-/**
- * @param {string} pathName 
- * The path name refers to the id of the path to set 
- * the css property to 100% visibility
- */
-
 function pathToggle(pathName){
     $("[id$='Selected-Role-Type']").css("opacity", "0%")
     $(pathName).css("opacity", "100%")
@@ -95,7 +87,7 @@ function areaOfFocusPage(){
 function areaOfFocusBody(areaOfFocus) {
     $("#DOM").append(`
     <div class="textbox" id="menucontainer">
-        <span onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
+        <span id="close" onclick="colorReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${focusCard[areaOfFocus]?.title ?? 'none'}</h2>
@@ -149,7 +141,7 @@ function roleTypesPage(){
 function roleTypesBody(role) {
     $("#DOM").append(`
     <div class="textbox" id="menucontainer">
-        <span onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
+        <span id="close" onclick="pathReset(); this.parentNode.remove(); return false;" class="btn btn-default large">
             <img src="/src/Esc X.svg" height="33" width="33"></img>
         </span>
         <h2>${roleTypes[role]?.title ?? 'none'}</h2>
