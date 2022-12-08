@@ -1,11 +1,10 @@
-//Area of Focus object to hold data as an object
+const { get } = require("jquery")
+
 //Role Types object as well
 var focusCard = {}
 var roleTypes = {}
 var employeeList = {}
 
-//Asynchronous function to pull in local JSON file holding 
-//the data for the information on the Area of Focus wheel 
 $.getJSON("/src/Areas-of-focus.json", function(json){
     console.log(json)
     focusCard = JSON.parse(JSON.stringify(json));
@@ -20,6 +19,15 @@ $.getJSON("/src/Role-types.json", function(json){
     console.log("Done")
 })
 
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ * @param {string} title 
+ * Title refers to a specific string in the id to
+ * refer to all ids that contain a specific ending text
+ */
+
 function colorChanger(pathName, title){
     $("path").css("opacity", "20%")
     $("circle").css("opacity", "20%")
@@ -27,11 +35,23 @@ function colorChanger(pathName, title){
     $(`[id*='${title}'`).css("opacity", "100%")
 }
 
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ */
+
 function colorReset(pathName){
     $("path").css("opacity", "100%")
     $("circle").css("opacity", "100%")
     $(pathName).css("opacity", "0%")
 }
+
+/**
+ * @param {string} pathName 
+ * The path name refers to the id of the path to set 
+ * the css property to 100% visibility
+ */
 
 function pathToggle(pathName){
     $("[id$='Selected-Role-Type']").css("opacity", "0%")
@@ -48,27 +68,26 @@ function pathReset(){
 function areaOfFocusPage(){
     $('#MainBody').empty()
     $("#MainBody").append(`
-    <div>
-        <h1>Areas of Focus</h1>
-    </div>
-    </br>
-    <div class="d-flex justify-content-left" id="DOM">
-        <div class="mySVG" id="SVGGraphic">
-    </div>
+        <div>
+            <h1>Areas of Focus</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="SVGGraphic">
+        </div>
     `)
     $("#SVGGraphic").load("/src/Areas-of-Focus.svg", function(){
         $("#SVGGraphic svg").css("height", "40vw");
         $("#Areas_of_Focus_Labels-Color path").on("click", function(evt) {
             var parsedStringArray = evt.target.id.split('_');
             var pathID = ("#" + (evt.target.id))
-            console.log(parsedStringArray[0])
             if($('#menucontainer').length == 0){
                 areaOfFocusBody(parsedStringArray[0])
             } else {
                 $('#menucontainer').remove()
                 areaOfFocusBody(parsedStringArray[0])
             }
-            colorChanger(pathID, parsedStringArray[0]);  
+            colorChanger(pathID, parsedStringArray[0]); 
         });
     })
 }
@@ -101,13 +120,13 @@ function areaOfFocusBody(areaOfFocus) {
 function roleTypesPage(){
     $('#MainBody').empty();
     $("#MainBody").append(`
-    <div>
-        <h1>Role Types</h1>
-    </div>
-    </br>
-    <div class="d-flex justify-content-left" id="DOM">
-        <div class="mySVG" id="RoleTypesSVG">
-    </div>
+        <div>
+            <h1>Role Types</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="RoleTypesSVG">
+        </div>
     `);
     $("#RoleTypesSVG").load("/src/Role-Type.svg", function(){
         $("#RoleTypesSVG svg").css("height", "40vw");
@@ -156,13 +175,14 @@ function roleTypesBody(role) {
 function individualizedPathwayPage(){
     $('#MainBody').empty();
     $("#MainBody").append(`
-    <div>
-        <h1>Individualized Pathway</h1>
-    </div>
-    </br>
-    <div class="d-flex justify-content-left" id="DOM">
-        <div class="mySVG" id="PathwaySVG"></div>
-    </div>`)
+        <div>
+            <h1>Individualized Pathway</h1>
+        </div>
+        </br>
+        <div class="d-flex justify-content-left" id="DOM">
+            <div class="mySVG" id="PathwaySVG"></div>
+        </div>
+    `)
     $("#PathwaySVG").load("/src/Areas-of-Focus.svg", function(){
         $("#PathwaySVG svg").css("height", "40vw");
         $("circle").on("click", function(evt) {
