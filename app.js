@@ -1,6 +1,3 @@
-const { get } = require("jquery")
-
-//Role Types object as well
 var focusCard = {}
 var roleTypes = {}
 var employeeList = {}
