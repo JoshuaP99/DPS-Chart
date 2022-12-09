@@ -349,21 +349,57 @@
       .cls-87 {
         fill: #dfdfdf;
       }
-
+      #Construction_Administration path{transition: .2s;}
+      #CA_Label{transition: .2s;}
       #CA_Label:hover{fill:gray;}
+
+      #Dot_Dot_Dot path{transition: .2s;}
+      #DDD_Label{transition: .2s;}
       #DDD_Label:hover{fill:gray;}
+
+      #Technology path{transition: .2s;}
+      #Tech_Label{transition: .2s;}
       #Tech_Label:hover{fill:gray;}
+      
+      #Innovation path{transition: .2s;}
+      #Innovation_Label{transition: .2s;}
       #Innovation_Label:hover{fill:gray;}
+
+      #Finance path{transition: .2s;}
+      #Finance_Label{transition: .2s;}
       #Finance_Label:hover{fill:gray;}
+
+      #Operations path{transition: .2s;}
+      #Operations_Label{transition: .2s;}
       #Operations_Label:hover{fill:gray;}
+
+      #Our_People path{transition: .2s;}
+      #Our_People_Label{transition: .2s;}
       #Our_People_Label:hover{fill:gray;}
+
+      #Marketing_and_Communications path{transition: .2s;}
+      #Marketing_Label{transition: .2s;}
       #Marketing_Label:hover{fill:gray;}
+
+      #Clients path{transition: .2s;}
+      #Clients_Label{transition: .2s;}
       #Clients_Label:hover{fill:gray;}
-      #Clients_Label:hover{fill:gray;}
+
+      #Subject_Matter_Expertise path{transition: .2s;}
+      #SME_Label{transition: .2s;}
       #SME_Label:hover{fill:gray;}
+
+      #Design path{transition: .2s;}
+      #Design_Label{transition: .2s;}
       #Design_Label:hover{fill:gray;}
+
+      #Quality path{transition: .2s;}
+      #Quality_Label{transition: .2s;}
       #Quality_Label:hover{fill:gray;}
 
+      #Facilitation path{transition: .2s;}
+
+      #Implementation path{transition: .2s;}
     </style>
   </defs>
   <g id="Finance">
